@@ -15,7 +15,7 @@ function myTeam() {
   console.log("Please build your team.");
   //create array of questions for user input
 
-  const initQuestions = () => {
+  function initQuestions() {
     inquirer
       .prompt([
         {
@@ -47,34 +47,78 @@ function myTeam() {
           answers.officeNumber
         );
         teamArr.push(manager);
-        teamMembers();
+        addMembers();
       });
-  };
+  }
 
   //new function to add team members
 
-  function teamMembers() {
+  function addMembers() {
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          message: "Which type of team member would you like to add?",
+          name: "employee",
+          choices: ["Engineer", "Intern", "I'm done adding team members."],
+        },
+      ])
+      .then((answers) => {
+        switch (answers.Employee) {
+          case "Engineer":
+            engineerQuestions();
+            break;
+          case "Intern":
+            internQuestions();
+            break;
+          default:
+            createTeam();
+        }
+      });
     //option to add team members
-    [
-      {
-        type: "list",
-        message: "Which type of team member would you like to add?",
-        name: "employee",
-        choices: ["Engineer", "Intern", "I'm done adding team members."],
-      },
-    ];
   }
   // need function for engineer questions
   function engineerQuestions() {
-    [];
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "What is your engineer's name?",
+          name: "name",
+        },
+        {
+          type: "input",
+          message: "What is your engineer's id number?",
+          name: "id",
+        },
+        {
+          type: "input",
+          message: "What is your engineer's email?",
+          name: "email",
+        },
+        {
+          type: "input",
+          message: "What is your engineer's github?",
+          name: "github",
+        },
+      ])
+      .then((answers) => {
+        const engineer = new Engineer(
+          answers.name,
+          answers.email,
+          answers.id,
+          answers.github
+        );
+        teamArr.push(engineer);
+        addMembers();
+      });
   }
 
   //need function for intern questions
 
-  function internQuestions() {
-    [];
-  }
+  function internQuestions() {}
 
+  function createTeam() {}
   //create function to write HTML file
 
   // function writeToFile(fileName, data) {
