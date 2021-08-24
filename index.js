@@ -36,7 +36,7 @@ function myTeam() {
       name: "officeNumber",
     },
   ];
-  console.log(initQuestions);
+  console.log(prompt.initQuestions);
   //new function to add team members???
 
   // function teamMembers() {
