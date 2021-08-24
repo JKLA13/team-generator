@@ -37,14 +37,30 @@ function myTeam() {
     },
   ];
   console.log(prompt.initQuestions);
-  //new function to add team members???
 
-  // function teamMembers() {
-  //     {
-  //         //option to add team members
+  //new function to add team members
 
-  //     }
-  // }
+  function teamMembers() {
+    //option to add team members
+    [
+      {
+        type: "list",
+        message: "Which type of team member would you like to add?",
+        name: "employee",
+        choices: ["Engineer", "Intern", "I'm done adding team members."],
+      },
+    ];
+  }
+  // need function for engineer questions
+  function engineerQuestions() {
+    [];
+  }
+
+  //need function for intern questions
+
+  function internQuestions() {
+    [];
+  }
 
   //create function to write HTML file
 
