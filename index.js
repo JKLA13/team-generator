@@ -3,27 +3,66 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const generateHtml = require("./utils/generateHtml");
 const path = require("path");
+const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
+const Employee = require("./lib/employee");
 
-//create array of questions for user input
+//create function for team questions?? wrap initial manager questions with subclass questions?
+function myTeam() {
+  //prompt user to build team
+  console.log("Please build your team.");
+  //create array of questions for user input
 
-const questions = [];
+  const initQuestions = [
+    {
+      type: "input",
+      message: "What is your managers name?",
+      name: "name",
+    },
+    {
+      type: "input",
+      message: "What is your managers id number?",
+      name: "id",
+    },
+    {
+      type: "input",
+      message: "What is your managers email?",
+      name: "email",
+    },
+    {
+      type: "input",
+      message: "What is your managers office number?",
+      name: "officeNumber",
+    },
+  ];
+  console.log(myTeam);
+  //new function to add team members???
 
-//create function to write HTML file
+  // function teamMembers() {
+  //     {
+  //         //option to add team members
 
-// function writeToFile(fileName, data) {
-//   return fs.writeFileSync(path.join(fileName), data);
-// }
+  //     }
+  // }
 
-//create a function to iitialize app
-//present use with questions
+  //create function to write HTML file
 
-// function init() {
-//     inquirer.prompt(questions).then((data) => {
-//         writeToFile("./employee.html"), generateHtml({...data});
-//         console.log("Your Employee.html Page has been generated!")
-//     })
-// }
+  // function writeToFile(fileName, data) {
+  //   return fs.writeFileSync(path.join(fileName), data;
+  // }
 
-//function call to initialize app
+  //create a function to iitialize app
+  //present use with questions
 
-// init();
+  // function initQuestions() {
+  //     inquirer.prompt(initQuestions).then((data) => {
+  //         writeToFile(".//dist/team.html"), generateHtml({...data});
+  //         console.log("Your team.html Page has been generated!")
+  //     })
+  // }
+
+  //function call to initialize app
+
+  // init();
+}
