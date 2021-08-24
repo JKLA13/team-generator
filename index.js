@@ -8,35 +8,48 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Employee = require("./lib/employee");
 
+const teamArr = [];
 //create function for team questions?? wrap initial manager questions with subclass questions?
 function myTeam() {
   //prompt user to build team
   console.log("Please build your team.");
   //create array of questions for user input
 
-  const initQuestions = [
-    {
-      type: "input",
-      message: "What is your managers name?",
-      name: "name",
-    },
-    {
-      type: "input",
-      message: "What is your managers id number?",
-      name: "id",
-    },
-    {
-      type: "input",
-      message: "What is your managers email?",
-      name: "email",
-    },
-    {
-      type: "input",
-      message: "What is your managers office number?",
-      name: "officeNumber",
-    },
-  ];
-  console.log(prompt.initQuestions);
+  const initQuestions = () => {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "What is your managers name?",
+          name: "name",
+        },
+        {
+          type: "input",
+          message: "What is your managers id number?",
+          name: "id",
+        },
+        {
+          type: "input",
+          message: "What is your managers email?",
+          name: "email",
+        },
+        {
+          type: "input",
+          message: "What is your managers office number?",
+          name: "officeNumber",
+        },
+      ])
+      .then((answers) => {
+        const manager = new Manager(
+          answers.name,
+          answers.id,
+          answers.email,
+          answers.officeNumber
+        );
+        teamArr.push(manager);
+        teamMembers();
+      });
+  };
 
   //new function to add team members
 
@@ -80,5 +93,6 @@ function myTeam() {
 
   //function call to initialize app
 
-  // init();
+  initQuestions();
 }
+myTeam();
