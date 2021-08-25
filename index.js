@@ -9,8 +9,10 @@ const Intern = require("./lib/intern");
 const Employee = require("./lib/employee");
 
 const teamArr = [];
-const OUTPUT_DIR = path.resolve(__dirname, "dist");
-const outPath = path.join(DIST_DIR, "team.html");
+
+// const OUTPUT_DIR = path.resolve(__dirname, "dist");
+// const outPath = path.join(DIST_DIR, "team.html");
+
 // // create a function to iitialize app
 // // present use with questions
 function myTeam() {
@@ -157,7 +159,7 @@ function myTeam() {
   }
   //function to create team
   function createTeam() {
-    fs.writeFile(outPath, render(teamArr), "utf-8");
+    // fs.writeFile(outPath, render(teamArr), "utf-8");
   }
 
   //function to initialize app
