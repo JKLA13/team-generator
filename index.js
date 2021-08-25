@@ -11,7 +11,7 @@ const render = require("./src/generateHtml");
 
 const teamArr = [];
 
-const DIST_DIR = path.resolve(__dirname, "dist");
+const DIST_DIR = path.resolve(__dirname, "/.dist");
 const outPath = path.join(DIST_DIR, "team.html");
 
 // // create a function to iitialize app
