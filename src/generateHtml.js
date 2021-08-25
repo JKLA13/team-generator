@@ -1,6 +1,8 @@
 // function to create team cards dynamically
+
 const createTeam = (team) => {
-  //manager card
+  //create manager card
+
   const createManager = (manager) => {
     return `
     <div class="card employee-card">
@@ -18,7 +20,7 @@ const createTeam = (team) => {
     </div>
     `;
   };
-  //engineer card
+  //create engineer card
   const createEngineer = (engineer) => {
     return `
     <div class="card employee-card">
@@ -36,7 +38,7 @@ const createTeam = (team) => {
     </div>
     `;
   };
-  //intern card
+  //create intern card
   const createIntern = (intern) => {
     return `
     <div class="card employee-card">
@@ -98,7 +100,7 @@ module.exports = (team) => {
 <div class="container">
 <div class="row>
 <div class="team-area col-12 d-flex justify-content-center">
-${cards}
+
 </div>
 </div>
 </div>
@@ -107,3 +109,4 @@ ${cards}
 </html>
 `;
 };
+// ${cards}

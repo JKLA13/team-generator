@@ -1,20 +1,21 @@
 //import/include packages needed for app
 const inquirer = require("inquirer");
 const fs = require("fs");
-const generateHtml = require("./utils/generateHtml");
+// const generateHtml = require("./src/generateHtml");
 const path = require("path");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-const Employee = require("./lib/employee");
+// const Employee = require("./lib/employee");
+const render = require("./src/generateHtml");
 
 const teamArr = [];
 
-// const OUTPUT_DIR = path.resolve(__dirname, "dist");
-// const outPath = path.join(DIST_DIR, "team.html");
+const DIST_DIR = path.resolve(__dirname, "dist");
+const outPath = path.join(DIST_DIR, "team.html");
 
 // // create a function to iitialize app
-// // present use with questions
+// // present user with questions
 function myTeam() {
   //prompt user to build team
   console.log("Please build your team.");
@@ -159,7 +160,7 @@ function myTeam() {
   }
   //function to create team
   function createTeam() {
-    // fs.writeFile(outPath, render(teamArr), "utf-8");
+    fs.writeFile(outPath, render(teamArr));
   }
 
   //function to initialize app
