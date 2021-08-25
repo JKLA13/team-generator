@@ -70,7 +70,7 @@ function myTeam() {
       ])
       //.then & switch to return employee selection
       .then((answers) => {
-        switch (answers.Employee) {
+        switch (answers.employee) {
           case "Engineer":
             engineerQuestions();
             break;
