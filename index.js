@@ -11,7 +11,7 @@ const render = require("./src/generateHtml");
 
 const teamArr = [];
 
-const DIST_DIR = path.resolve(__dirname, "/.dist");
+const DIST_DIR = path.resolve(__dirname, "./dist");
 const outPath = path.join(DIST_DIR, "team.html");
 
 // // create a function to iitialize app
@@ -159,10 +159,10 @@ function myTeam() {
       });
   }
   //function to create team
-  function createTeam() {
-    console.log(outPath);
-    console.log(teamArr);
-    fs.writeFile(outPath, render(teamArr), () => {});
+  function createTeam(generateHtml) {
+    // console.log(outPath);
+    // console.log(teamArr);
+    fs.writeFileSync(outPath, render(teamArr), "utf-8", () => {});
   }
 
   //function to initialize app

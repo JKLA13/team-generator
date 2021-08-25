@@ -1,6 +1,7 @@
 // function to create team cards dynamically
 
 const createTeam = (team) => {
+  console.log({ team });
   //create manager card
 
   const createManager = (manager) => {
@@ -91,16 +92,16 @@ module.exports = (team) => {
 </head>
 <body>
 <div class="container-fluid">
-<div class="row>
+<div class="row">
 <div class="col-12 jumbotron mb-3 team-heading bg-info">
 <h1 class="text-center text-white">My Team</h1>
 </div>
 </div>
 </div>
 <div class="container">
-<div class="row>
+<div class="row">
 <div class="team-area col-12 d-flex justify-content-center">
-
+${createTeam(team)}
 </div>
 </div>
 </div>
@@ -110,3 +111,4 @@ module.exports = (team) => {
 `;
 };
 // ${cards}
+// createTeam();
