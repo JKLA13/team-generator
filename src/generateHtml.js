@@ -1,57 +1,57 @@
 // function to create team cards dynamically
 
 const createTeam = (team) => {
-  console.log({ team });
+  // console.log({ team });
   //create manager card
 
-  const createManager = (manager) => {
+  const createManager = (Manager) => {
     return `
     <div class="card employee-card">
         <div class="card-header">
-            <h2 class="card-title">${manager.getName()}</h2>
-            <h3 class="card-title">${manager.getRole()}</h3>
+            <h2 class="card-title">${Manager.getName()}</h2>
+            <h3 class="card-title">${Manager.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-            <li class="list-group-item">${manager.getId()}</li>
-            <li class="list-group-item">${manager.getEmail()}</li>
-            <li class="list-group-item">${manager.getofficeNumber()}</li>
+            <li class="list-group-item">${Manager.getId()}</li>
+            <li class="list-group-item">${Manager.getEmail()}</li>
+            <li class="list-group-item">${Manager.getOfficeNumber()}</li>
             </ul>
         </div>
     </div>
     `;
   };
   //create engineer card
-  const createEngineer = (engineer) => {
+  const createEngineer = (Engineer) => {
     return `
     <div class="card employee-card">
         <div class="card-header">
-            <h2 class="card-title">${engineer.getName()}</h2>
-            <h3 class="card-title">${engineer.getRole()}</h3>
+            <h2 class="card-title">${Engineer.getName()}</h2>
+            <h3 class="card-title">${Engineer.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-            <li class="list-group-item">${engineer.getId()}</li>
-            <li class="list-group-item">${engineer.getEmail()}</li>
-            <li class="list-group-item">${engineer.getGithub()}</li>
+            <li class="list-group-item">${Engineer.getId()}</li>
+            <li class="list-group-item">${Engineer.getEmail()}</li>
+            <li class="list-group-item">${Engineer.getGithub()}</li>
             </ul>
         </div>
     </div>
     `;
   };
   //create intern card
-  const createIntern = (intern) => {
+  const createIntern = (Intern) => {
     return `
     <div class="card employee-card">
         <div class="card-header">
-            <h2 class="card-title">${intern.getName()}</h2>
-            <h3 class="card-title">${intern.getRole()}</h3>
+            <h2 class="card-title">${Intern.getName()}</h2>
+            <h3 class="card-title">${Intern.getRole()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-            <li class="list-group-item">${intern.getId()}</li>
-            <li class="list-group-item">${intern.getEmail()}</li>
-            <li class="list-group-item">${intern.getSchool()}</li>
+            <li class="list-group-item">${Intern.getId()}</li>
+            <li class="list-group-item">${Intern.getEmail()}</li>
+            <li class="list-group-item">${Intern.getSchool()}</li>
             </ul>
         </div>
     </div>

@@ -160,8 +160,6 @@ function myTeam() {
   }
   //function to create team
   function createTeam(generateHtml) {
-    // console.log(outPath);
-    // console.log(teamArr);
     fs.writeFileSync(outPath, render(teamArr), "utf-8", () => {});
   }
 
