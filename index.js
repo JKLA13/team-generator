@@ -1,12 +1,12 @@
 //import/include packages needed for app
 const inquirer = require("inquirer");
 const fs = require("fs");
-// const generateHtml = require("./src/generateHtml");
+const generateHtml = require("./src/generateHtml");
 const path = require("path");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
-// const Employee = require("./lib/employee");
+const Employee = require("./lib/employee");
 const render = require("./src/generateHtml");
 
 const teamArr = [];
