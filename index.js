@@ -161,6 +161,8 @@ function myTeam() {
   //function to create team
   function createTeam() {
     fs.writeFile(outPath, render(teamArr));
+    console.log(outPath);
+    console.log(teamArr);
   }
 
   //function to initialize app
