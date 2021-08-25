@@ -9,7 +9,10 @@ const Intern = require("./lib/intern");
 const Employee = require("./lib/employee");
 
 const teamArr = [];
-//create function for team questions?? wrap initial manager questions with subclass questions?
+const OUTPUT_DIR = path.resolve(__dirname, "dist");
+const outPath = path.join(DIST_DIR, "team.html");
+// // create a function to iitialize app
+// // present use with questions
 function myTeam() {
   //prompt user to build team
   console.log("Please build your team.");
@@ -51,7 +54,7 @@ function myTeam() {
       });
   }
 
-  //new function to add team members
+  //function to add team members
 
   function addMembers() {
     inquirer
@@ -63,6 +66,7 @@ function myTeam() {
           choices: ["Engineer", "Intern", "I'm done adding team members."],
         },
       ])
+      //.then & switch to return employee selection
       .then((answers) => {
         switch (answers.Employee) {
           case "Engineer":
@@ -72,12 +76,12 @@ function myTeam() {
             internQuestions();
             break;
           default:
+            console.log("Team has been created!");
             createTeam();
         }
       });
-    //option to add team members
   }
-  // need function for engineer questions
+  // function for engineer questions
   function engineerQuestions() {
     inquirer
       .prompt([
@@ -114,28 +118,49 @@ function myTeam() {
       });
   }
 
-  //need function for intern questions
+  //function for intern questions
 
-  function internQuestions() {}
+  function internQuestions() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          message: "What is your intern's name?",
+          name: "name",
+        },
+        {
+          type: "input",
+          message: "What is your intern's id number?",
+          name: "id",
+        },
+        {
+          type: "input",
+          message: "What is your intern's email?",
+          name: "email",
+        },
+        {
+          type: "input",
+          message: "What is your intern's school?",
+          name: "school",
+        },
+      ])
+      .then((answers) => {
+        const intern = new Intern(
+          answers.name,
+          answers.email,
+          answers.id,
+          answers.school
+        );
+        teamArr.push(intern);
+        addMembers();
+      });
+  }
+  //function to create team
+  function createTeam() {
+    fs.writeFile(outPath, render(teamArr), "utf-8");
+  }
 
-  function createTeam() {}
-  //create function to write HTML file
-
-  // function writeToFile(fileName, data) {
-  //   return fs.writeFileSync(path.join(fileName), data;
-  // }
-
-  //create a function to iitialize app
-  //present use with questions
-
-  // function initQuestions() {
-  //     inquirer.prompt(initQuestions).then((data) => {
-  //         writeToFile(".//dist/team.html"), generateHtml({...data});
-  //         console.log("Your team.html Page has been generated!")
-  //     })
-  // }
-
-  //function call to initialize app
+  //function to initialize app
 
   initQuestions();
 }
