@@ -1,13 +1,6 @@
 const Employee = require("../lib/employee");
 
 describe("Employee", () => {
-  it("Can create employee object", () => {
-    const employee = new Employee();
-    expect(typeof employee).toBe("object");
-  });
-});
-
-describe("Employee", () => {
   it("Can take name from constructor arguement", () => {
     const name = "Hal";
     const employee = new Employee(name);
