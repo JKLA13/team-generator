@@ -11,7 +11,7 @@ describe("Employee", () => {
 describe("Employee", () => {
   it("Can take id from constructor arguement", () => {
     const testId = 13;
-    const employee = new Employee(testId);
+    const employee = new Employee(null, testId, null);
     expect(employee.id).toBe(testId);
   });
 });
@@ -19,7 +19,7 @@ describe("Employee", () => {
 describe("Employee", () => {
   it("Can take email from constructor arguement", () => {
     const testEmail = "hal@gmail.com";
-    const employee = new Employee(testEmail);
+    const employee = new Employee(null, null, testEmail);
     expect(employee.email).toBe(testEmail);
   });
 });
@@ -35,7 +35,7 @@ describe("Employee", () => {
 describe("Employee", () => {
   it("Can take id from getId()", () => {
     const testGetId = 13;
-    const employee = new Employee(testGetId);
+    const employee = new Employee(null, testGetId, null);
     expect(employee.getId()).toBe(testGetId);
   });
 });
@@ -43,7 +43,7 @@ describe("Employee", () => {
 describe("Employee", () => {
   it("Can take email from getEmail()", () => {
     const testGetEmail = "hal@gmail.com";
-    const employee = new Employee(testGetEmail);
+    const employee = new Employee(null, null, testGetEmail);
     expect(employee.getEmail()).toBe(testGetEmail);
   });
 });

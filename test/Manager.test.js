@@ -5,7 +5,7 @@ describe("Manager", () => {
   it("Can grab office number from constructor", () => {
     const testValue = "500";
     const manager = new Manager("Hal", 13, "hal@gmail.com", testValue);
-    expect(manager.officeNumber).toBe(testValue);
+    expect(manager.OfficeNumber).toBe(testValue);
   });
 });
 
