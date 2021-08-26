@@ -5,8 +5,8 @@ const createTeam = (team) => {
 
   const createManager = (Manager) => {
     return `
-    <div class="card employee-card">
-        <div class="card-header">
+    <div class="card employee-card m-3">
+        <div class="card-header bg-success">
             <h2 class="card-title">${Manager.getName()}</h2>
             <h3 class="card-title">${Manager.getRole()}</h3>
         </div>
@@ -23,8 +23,8 @@ const createTeam = (team) => {
   //create engineer card
   const createEngineer = (Engineer) => {
     return `
-    <div class="card employee-card">
-        <div class="card-header">
+    <div class="card employee-card m-3">
+        <div class="card-header bg-success">
             <h2 class="card-title">${Engineer.getName()}</h2>
             <h3 class="card-title">${Engineer.getRole()}</h3>
         </div>
@@ -41,8 +41,8 @@ const createTeam = (team) => {
   //create intern card
   const createIntern = (Intern) => {
     return `
-    <div class="card employee-card">
-        <div class="card-header">
+    <div class="card employee-card m-3">
+        <div class="card-header bg-success">
             <h2 class="card-title">${Intern.getName()}</h2>
             <h3 class="card-title">${Intern.getRole()}</h3>
         </div>
