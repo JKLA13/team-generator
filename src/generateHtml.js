@@ -1,7 +1,6 @@
 // function to create team cards dynamically
 
 const createTeam = (team) => {
-  // console.log({ team });
   //create manager card
 
   const createManager = (Manager) => {

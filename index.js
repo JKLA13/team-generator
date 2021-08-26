@@ -112,8 +112,8 @@ function myTeam() {
       .then((answers) => {
         const engineer = new Engineer(
           answers.name,
-          answers.email,
           answers.id,
+          answers.email,
           answers.github
         );
         teamArr.push(engineer);
@@ -150,8 +150,8 @@ function myTeam() {
       .then((answers) => {
         const intern = new Intern(
           answers.name,
-          answers.email,
           answers.id,
+          answers.email,
           answers.school
         );
         teamArr.push(intern);
