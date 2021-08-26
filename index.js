@@ -8,6 +8,7 @@ const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
 const Employee = require("./lib/employee");
 const render = require("./src/generateHtml");
+const jest = require("jest");
 
 const teamArr = [];
 
