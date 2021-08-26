@@ -20,6 +20,6 @@ describe("Intern", () => {
   it("Can grab school from getSchool()", () => {
     const testValue = "DU";
     const intern = new Intern("Hal", 13, "hal@gmail.com", testValue);
-    expect(intern.getGithub()).toBe(testValue);
+    expect(intern.getSchool()).toBe(testValue);
   });
 });
